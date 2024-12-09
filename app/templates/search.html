@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">Search</h1>
+<form method="POST" class="mt-4">
+    <div class="input-group mb-3">
+        <input type="text" name="query" value="{{ query }}" class="form-control" placeholder="Search items..." aria-label="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="list-group">
+    {% for item in items %}
+    <div class="list-group-item">
+        <h5>{{ item['name'] }}</h5>
+        <p>{{ item['description'] }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
